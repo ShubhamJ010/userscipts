@@ -23,7 +23,7 @@
         );
     }
 
-    document.addEventListener('keydown', (event) => {
+    window.addEventListener('keydown', (event) => {
         if (event.ctrlKey || event.metaKey || event.altKey) return;
 
         if (isTypingTarget(document.activeElement)) return;
@@ -31,6 +31,8 @@
         const amount = window.innerHeight * 0.75;
 
         if (event.key.toLowerCase() === 'z') {
+            event.preventDefault();
+            event.stopPropagation();
             window.scrollBy({
                 top: -amount,
                 behavior: 'smooth'
@@ -38,10 +40,12 @@
         }
 
         if (event.key.toLowerCase() === 'x') {
+            event.preventDefault();
+            event.stopPropagation();
             window.scrollBy({
                 top: amount,
                 behavior: 'smooth'
             });
         }
-    });
+    }, { capture: true });
 })();
