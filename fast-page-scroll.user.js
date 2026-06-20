@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         Fast Page Scroll (Z/X)
+// @name         Fast Page Scroll (Shift+Z/X)
 // @namespace    https://violentmonkey.github.io/
-// @version      1.0
-// @description  Z = scroll up 3/4 screen, X = scroll down 3/4 screen
+// @version      1.1
+// @description  Shift+Z = scroll up 3/4 screen, Shift+X = scroll down 3/4 screen
 // @author       Shubham
 // @match        *://*/*
 // @grant        none
@@ -24,6 +24,7 @@
     }
 
     window.addEventListener('keydown', (event) => {
+        if (!event.shiftKey) return;
         if (event.ctrlKey || event.metaKey || event.altKey) return;
 
         if (isTypingTarget(document.activeElement)) return;
