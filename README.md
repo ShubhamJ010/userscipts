@@ -48,3 +48,23 @@ Quickly search for selected text on various platforms. This userscript allows yo
 - Press 'y' to search the selected text on YouTube
 
 ---
+
+### Naukri Select 5 Jobs
+
+Adds a "Select 5" button to each job listing on Naukri.com recommended jobs. Clicking the button selects that job plus the next 4 jobs in the list.
+
+**Features:**
+- "Select 5" button on each job card
+- Automatically checks the current job and next 4 jobs
+- Staggered click timing for reliable state changes
+- Works with dynamically loaded content
+
+**Installation:**
+- Install a userscript manager like Tampermonkey
+- Install the `naukri-check-next4.user.js` script
+
+**Usage:**
+- Navigate to your Naukri recommended jobs page
+- Click the "Select 5" button on any job to select it and the next 4
+
+---
